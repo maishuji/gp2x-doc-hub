@@ -2,7 +2,7 @@
 
 > **Première version — 23 octobre 2026**
 
-Ce document répertorie des sites web qui traitent de la GP2X F100/F200, de son matériel, de ses logiciels ou de sa communauté. Il complète l’[inventaire des projets et ressources liés à la GP2X](projets-github-gp2x.md), qui est principalement consacré aux dépôts de code.
+Ce document répertorie des sites web qui traitent de la GP2X F100/F200, de son matériel, de ses logiciels ou de sa communauté. Il complète l’[inventaire des projets et ressources liés à la GP2X](projets-github-gp2x.md), qui est principalement consacré aux dépôts de code. Pour choisir une image système sans confondre les modèles, consulter aussi le [guide des firmwares GP32, GP2X, Wiz et Caanoo](firmwares-gp2x.md).
 
 L’inventaire est volontairement incrémental : chaque nouvelle ressource doit être vérifiée avant son ajout. Un site présent dans cette liste peut être ancien, incomplet ou accessible uniquement par une archive web. Sa présence ne garantit ni l’exactitude de toutes ses informations, ni la sûreté de ses téléchargements.
 
