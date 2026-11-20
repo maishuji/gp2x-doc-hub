@@ -1,6 +1,6 @@
-# Inventaire des projets et ressources liés à la GP2X
+# Inventaire multiplateforme des projets liés à la GP2X
 
-> **Première version — 23 octobre 2026**
+> **Première version — 23 octobre 2026 · Mise à jour — 27 octobre 2026**
 
 Cet inventaire recense des projets et ressources publics dont la description, le nom ou les informations disponibles indiquent un lien avec la famille GP2X. Il couvre notamment GitHub, GitLab et SourceForge. Il sert de point de départ pour explorer l’écosystème et préserver des références, pas de catalogue exhaustif ni de garantie que chaque projet se compile ou fonctionne encore.
 
@@ -8,7 +8,7 @@ Cet inventaire recense des projets et ressources publics dont la description, le
 
 Les recherches ont été effectuées sur [GitHub](https://github.com/search?q=GP2X&type=repositories), [GitLab](https://gitlab.com/explore/projects?name=gp2x) et le [répertoire SourceForge](https://sourceforge.net/directory/?q=gp2x). Les entrées ci-dessous ont été retenues lorsque leur lien avec GP2X apparaissait clairement dans la page du projet ou sa documentation. Certaines pages décrivent des projets historiques ; leur présence en ligne ne prouve ni une maintenance actuelle ni la disponibilité d’un binaire utilisable.
 
-La famille GP2X comprend plusieurs appareils (notamment GP2X F100/F200, Wiz et Caanoo). Les projets pour Wiz/Caanoo ou les portages vers d’autres plateformes sont signalés comme tels : leur présence ne signifie pas qu’ils sont compatibles avec la F100/F200. La colonne d’activité donne le dernier push affiché par l’API GitHub, le dernier commit exposé par l’API GitLab, ou la date du fichier le plus récent dans le flux RSS SourceForge consulté (selon la plateforme). Pour GitLab, un import peut donner une date de dépôt postérieure au dernier changement d’origine. Pour SourceForge, l’absence de publication dans le flux ne signifie pas nécessairement que le projet n’a jamais été mis à jour. Ces dates ont été relevées le 23 octobre 2026. Les résumés s’appuient sur les informations publiques des projets ; ils ne constituent pas des essais sur matériel. Vérifier le README, les prérequis, la licence, le modèle ciblé et la date des derniers changements avant réutilisation. Un miroir ou une copie d’un projet déjà listé est signalé afin de ne pas le compter comme projet distinct.
+La famille GP2X comprend plusieurs appareils (notamment GP2X F100/F200, Wiz et Caanoo). Les projets pour Wiz/Caanoo ou les portages vers d’autres plateformes sont signalés comme tels : leur présence ne signifie pas qu’ils sont compatibles avec la F100/F200. La colonne d’activité donne le dernier push affiché par l’API GitHub, le dernier commit exposé par l’API GitLab ou la date « Last Update » publiée par SourceForge. Pour GitLab, un import peut donner une date de dépôt postérieure au dernier changement d’origine. Pour SourceForge, cette date peut refléter une opération d’archivage ou de plateforme plutôt qu’une nouvelle version du logiciel. Les entrées initiales ont été relevées le 23 octobre 2026 et la recherche GitLab/SourceForge a été revue le 27 octobre 2026. Les résumés s’appuient sur les informations publiques des projets ; ils ne constituent pas des essais sur matériel. Vérifier le README, les prérequis, la licence, le modèle ciblé et la date des derniers changements avant réutilisation. Un miroir ou une copie d’un projet déjà listé est signalé afin de ne pas le compter comme projet distinct.
 
 ## Outils système, développement et matériel
 
@@ -95,17 +95,30 @@ La famille GP2X comprend plusieurs appareils (notamment GP2X F100/F200, Wiz et C
 | [Termula2x](https://sourceforge.net/projects/termula2x/) | Utilitaire / terminal | Dernière publication : 2008-08-03 | Terminal UNIX pour GP2X, avec éditeur vi selon la description du projet. |
 | [VICE](https://sourceforge.net/projects/vice-emu/) | Émulation | Dernière publication : 2026-10-21 | Émulateur de systèmes Commodore dont la page mentionne GP2X parmi les plateformes. Cette mention ne prouve pas qu’une version récente fonctionne sur la console. |
 | [Wizznic!](https://sourceforge.net/projects/wizznic/) | Jeu / Wiz | Dernière publication : 2020-04-04 | Jeu de puzzle de type Puzznic présenté pour Wiz, Linux et Windows ; la page consultée ne revendique pas de compatibilité F100/F200. |
+| [GP2X Hardware Library](https://sourceforge.net/projects/gp2xhwlib/) | Matériel / bibliothèque | Dernière mise à jour SourceForge : 2015-11-23 | Bibliothèque C donnant accès aux fonctions matérielles GP2X, avec émulation SDL sur PC. La page annonce notamment vidéo, double CPU, blitters, gestion d’énergie, détection F200 et écran tactile. Aucun essai local n’a été réalisé. |
+| [kimtutarbizi.org](https://sourceforge.net/projects/kimtutarbizi/) | Développement / documentation | Dernière mise à jour SourceForge : 2013-04-19 | Collection historique de bibliothèques, exemples et documents pour développer des applications, jeux et démonstrations GP2X en C/C++. Le projet est indiqué au statut « Planning » malgré la présence d’un dépôt de code. |
+| [GMenu2X](https://sourceforge.net/projects/gmenu2x/) | Menu système — archive amont | Dernière mise à jour SourceForge : 2013-04-03 | Frontend alternatif GP2X avec lanceur, surveillance de l’espace SD et réglage de fréquence. Cette page historique complète le dépôt GitHub `mtorromeo/gmenu2x` déjà listé ; il ne s’agit pas d’un projet distinct. |
+| [Sycophant](https://sourceforge.net/projects/sycophant/) | Menu système | Dernière mise à jour SourceForge : 2013-04-24 | Remplacement de l’interface GP2X proposant thèmes, configuration et gestion de fichiers. La page le classe en bêta et ne précise pas la compatibilité détaillée F100/F200. |
+| [Glua2X](https://sourceforge.net/projects/glua2x/) | Langage / bibliothèque | Dernière mise à jour SourceForge : 2013-03-08 | Port historique de Lua 5.0 et SDL pour GP2X, destiné aux développeurs et utilisateurs. À distinguer de `gplua2x`, répertorié plus haut sur GitHub. |
+| [gprss](https://sourceforge.net/projects/gprss/) | Application / lecteur RSS | Dernière mise à jour SourceForge : 2013-04-19 | Lecteur RSS hors ligne pour GP2X en Python/Pygame, accompagné d’un outil PC chargé de télécharger et sérialiser les flux. |
+| [GP2ku](https://sourceforge.net/projects/gp2ku/) | Jeu | Dernière mise à jour SourceForge : 2013-04-19 | Sudoku SDL conçu pour GP2X et annoncé comme portable vers d’autres systèmes disposant de SDL. SourceForge le classe en pré-alpha. |
+| [YouTubed-2x](https://sourceforge.net/projects/youtubed-2x/) | Outil PC — archive amont | Dernière mise à jour SourceForge : 2015-11-11 | Convertisseur vidéo pour GP2X F100, F200 et Wiz. Le dépôt GitHub archivé `Ryochan7/YouTubed-2x` est déjà listé plus haut ; cette entrée documente sa page SourceForge historique. |
 
 ## Sources et recherches pour prolonger l’inventaire
 
 - [Recherche GitHub des dépôts « GP2X »](https://github.com/search?q=GP2X&type=repositories) et [sujet `gp2x`](https://github.com/topics/gp2x) — résultats et projets balisés, non exhaustifs.
 - [Sujet GitHub `gp2x-wiz`](https://github.com/topics/gp2x-wiz) — projets étiquetés spécifiquement Wiz.
-- [Recherche de projets GitLab « gp2x »](https://gitlab.com/explore/projects?name=gp2x) — résultats susceptibles de varier avec le temps.
-- [Répertoire SourceForge recherchant « gp2x »](https://sourceforge.net/directory/?q=gp2x) — résultats susceptibles de contenir des doublons ou des projets mentionnant seulement la plateforme.
+- [Recherche de projets GitLab « gp2x »](https://gitlab.com/explore/projects?name=gp2x) et [API GitLab correspondante](https://gitlab.com/api/v4/projects?search=gp2x&simple=true&per_page=100) — cinq résultats publics pertinents observés le 27 octobre 2026, tous répertoriés ci-dessus.
+- [Répertoire SourceForge recherchant « gp2x »](https://sourceforge.net/directory/?q=gp2x) — 30 résultats annoncés le 27 octobre 2026 ; certains sont des doublons, des projets Wiz ou des logiciels qui mentionnent seulement un format compatible.
 - [Historique des issues GitHub](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues) — peut aider à retrouver des informations de compatibilité laissées par les utilisateurs.
 
 Les anciens catalogues et archives consacrés à GP2X peuvent fournir des pistes supplémentaires, mais leur accessibilité et l’intégrité des fichiers n’ont pas été vérifiées dans le cadre de cette mise à jour.
 
 ## Mise à jour de l’inventaire
 
-Pour ajouter une entrée, vérifier que le dépôt est bien public et qu’il existe toujours, lire son README et identifier précisément le modèle GP2X concerné. Indiquer explicitement s’il s’agit d’un port, d’un outil PC, d’une documentation, d’un projet Wiz/Caanoo ou d’un projet propre à F100/F200. Ne pas présenter un dépôt comme maintenu ou fonctionnel sans preuve récente.
+Pour ajouter une entrée, vérifier que le dépôt est bien public et qu’il existe toujours, lire son README ou sa page de présentation et identifier précisément le modèle GP2X concerné. Indiquer explicitement s’il s’agit d’un port, d’un outil PC, d’une documentation, d’un projet Wiz/Caanoo ou d’un projet propre à F100/F200. Ne pas présenter un dépôt comme maintenu ou fonctionnel sans preuve récente.
+
+### Journal de recherche
+
+- **27 octobre 2026 — GitLab** : interrogation de l’API publique avec le terme `gp2x`. Les cinq résultats pertinents étaient déjà présents dans l’inventaire ; aucune nouvelle entrée GitLab n’a donc été ajoutée.
+- **27 octobre 2026 — SourceForge** : consultation du répertoire et vérification individuelle des pages GP2X Hardware Library, kimtutarbizi.org, GMenu2X, Sycophant, Glua2X, gprss, GP2ku et YouTubed-2x. Les descriptions et dates ci-dessus proviennent des pages SourceForge ; les sources n’ont pas été compilées ni exécutées.

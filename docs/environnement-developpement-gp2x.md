@@ -120,6 +120,45 @@ Pour un projet particulier, vérifier son Makefile :
 - `arm-open2x-linux-*`, ancien sysroot GPH/Open2X ou bibliothèques SDL du firmware : cette image seule est probablement insuffisante ;
 - chaîne Wiz/Caanoo : compatibilité non établie.
 
+## Émuler la GP2X sur un ordinateur
+
+Oui, c'est encore possible — et il existe maintenant des projets plus proches de l'émulation de la console entière que les anciens émulateurs de jeux. Ils ne sont pas des images Docker : on les compile ou on les exécute sur l'ordinateur. Le dev container peut fournir un environnement Linux reproductible pour compiler les sources, mais il ne fournit ni firmware ni jeux.
+
+### GPort2X : démarrer firmware et carte SD
+
+[GPort2X](https://github.com/Jacob-Matthew-Cook/GPort2X) est un émulateur de l'environnement GP2X pour Linux moderne. Selon son README et son [état technique daté du 8 octobre 2026](https://github.com/Jacob-Matthew-Cook/GPort2X/blob/main/docs/STATUS.md), il sait démarrer le firmware de référence et lancer des programmes depuis une image de carte, avec un moteur interpréteur/JIT pour hôtes x86-64/AArch64 ; un moteur natif armhf est aussi décrit pour les noyaux AArch64 compatibles 32 bits. Le projet documente des tests de jeux, mais ce niveau de compatibilité est celui rapporté par son auteur, pas une validation indépendante de chaque titre.
+
+Le README fournit ce chemin de compilation Linux :
+
+```sh
+git clone https://github.com/Jacob-Matthew-Cook/GPort2X.git
+cd GPort2X
+make
+make test
+```
+
+SDL2 est facultatif pour compiler ; sans SDL2, le backend reste sans fenêtre. Pour la fenêtre SDL2, le README indique que les fichiers de développement SDL2 doivent être installés sur l'hôte de compilation. Dans un dev container, afficher la fenêtre exige aussi une configuration d'affichage de l'hôte (Wayland/X11) et son transfert au conteneur : construire dans le conteneur ne rend pas automatiquement la fenêtre visible.
+
+Chaque exécution avec firmware et carte requiert des fichiers **fournis par l'utilisateur** : dump du firmware et image de carte SD. GPort2X documente l'image de carte en lecture seule ; les données de jeu ne sont pas incluses. Respecter les droits applicables et ne pas partager ces dumps. Voir le [README GPort2X](https://github.com/Jacob-Matthew-Cook/GPort2X) pour les options exactes et les limites actuelles.
+
+### magiceyes : lancer des jeux GP2X/Wiz/Caanoo sur PC
+
+[magiceyes](https://github.com/zdiemer/magiceyes) annonce l'émulation de titres GP2X F100/F200, Wiz et Caanoo. La [version 0.6.0](https://github.com/zdiemer/magiceyes/releases) fournit un paquet Windows prêt à lancer ; son README documente également un build Linux depuis les sources. Ce projet vise l'exécution de jeux et la réimplémentation de leurs interfaces matérielles, plutôt qu'une distribution complète avec démarrage générique du firmware. Il n'inclut pas les jeux ni les données de firmware ; son tableau de compatibilité est maintenu par le projet et évolue.
+
+C'est une piste pour tester rapidement un `.gpe` sur Windows, ou construire/lancer l'émulateur sur Linux. Pour une émulation qui démarre le firmware GP2X complet et une image de carte, GPort2X est la piste plus directement adaptée d'après les fonctions documentées. Les résultats de compatibilité publiés par chaque projet ne sont pas des validations indépendantes.
+
+### Projets historiques ou prototypes à ne pas confondre
+
+- [Ginge](https://github.com/notaz/ginge) est une couche de compatibilité pour exécuter certains programmes GP2X sur d'autres appareils ARM Linux ; son README précise que ce n'est **pas** un émulateur complet et qu'il ne cible pas directement un PC Linux x86.
+- [dolos2x](https://github.com/Orkie/dolos2x) est un prototype basé sur Unicorn qui annonce pouvoir lancer U-Boot Open2X et quelques homebrews ; son README garde le démarrage Linux parmi les tâches à faire. Ce n'est donc pas encore le choix pratique pour lancer un firmware complet.
+- Les anciens ports d'émulateurs (MAME, PicoDrive, etc.) émulent les systèmes qu'ils exécutent sur GP2X ; ils ne sont pas nécessairement des émulateurs de la console GP2X elle-même.
+
+### Conteneur conseillé selon le besoin
+
+- **Compiler des applications bare-metal devkitPro** : utiliser `devkitpro/devkitarm` comme décrit plus haut.
+- **Compiler ou tester l'émulateur GPort2X sur Linux** : partir d'un conteneur Linux de développement avec GCC, GNU Make et, si la fenêtre est souhaitée, SDL2 et la configuration d'affichage transférée. Aucun conteneur spécialisé maintenu par le projet GPort2X ou magiceyes n'a été identifié pendant cette recherche.
+- **Développer une application Linux/Open2X** : le conteneur devkitPro seul ne fournit pas le sysroot historique `arm-open2x-linux-*`. L'émulateur est une aide de test, pas un SDK ni un remplacement de la toolchain.
+
 ## Autres images trouvées
 
 La recherche Docker Hub renvoie également :
@@ -141,3 +180,4 @@ Aucune image trouvée sous le terme `open2x` n'offrait une base publique identif
 ## Journal des vérifications
 
 - **24 octobre 2026** : image `devkitpro/devkitarm` trouvée ; Dockerfile confirmé avec `gp2x-dev` ; manifeste du tag `20260610` vérifié pour Linux `amd64` et `arm64` ; distinction documentée entre devkitPro bare-metal et anciens SDK Linux/Open2X.
+- **26 octobre 2026** : ajout de GPort2X, magiceyes, Ginge et dolos2x à l'inventaire des options d'émulation ; informations recoupées avec les README et, pour GPort2X, son état technique daté du 8 octobre 2026. Aucun build ni lancement de ces émulateurs n'a été réalisé localement.
